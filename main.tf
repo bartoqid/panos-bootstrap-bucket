@@ -19,7 +19,6 @@ resource "aws_s3_bucket_object" "init_cfg" {
   key    = "config/init-cfg.txt"
   content = templatefile("${path.module}/init-cfg.txt.tmpl",
     {
-      "hostname"         = var.hostname,
       "panorama-server"  = var.panorama-server,
       "panorama-server2" = var.panorama-server2,
       "tplname"          = var.tplname,
